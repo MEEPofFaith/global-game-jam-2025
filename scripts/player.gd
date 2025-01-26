@@ -72,6 +72,6 @@ func _process(delta) -> void:
 		var b = BUBBLE.instantiate()
 		var ang = global_position.angle_to_point(mousePos)
 		b.position = global_position + Vector2(shotDist, 0).rotated(ang)
-		#b.linear_velocity = PLAYER.INSTANCE.get_real_velocity() + Vector2(FIREPOWER, 0).rotated(ang)
-		b.linear_velocity = Vector2(FIREPOWER, 0).rotated(ang)
+		b.linear_velocity = PLAYER.INSTANCE.get_real_velocity() + Vector2(FIREPOWER, 0).rotated(ang)
+		#b.linear_velocity = Vector2(FIREPOWER, 0).rotated(ang)
 		GAME.INSTANCE.add_child(b)
