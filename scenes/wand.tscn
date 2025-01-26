@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmkmhos2nqig5"]
+
+[ext_resource type="Script" path="res://scripts/wand.gd" id="1_gp8sk"]
+[ext_resource type="Texture2D" uid="uid://boyg37bha8rxy" path="res://assets/wand.png" id="1_ssuri"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p5ng6"]
+size = Vector2(20, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y6w4l"]
+size = Vector2(17, 8)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_gp8sk")
+wandLength = 20.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(9, 0)
+texture = ExtResource("1_ssuri")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9, 0)
+shape = SubResource("RectangleShape2D_p5ng6")
+disabled = true
+
+[node name="Bubble Check" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bubble Check"]
+position = Vector2(27.5, 0)
+shape = SubResource("RectangleShape2D_y6w4l")

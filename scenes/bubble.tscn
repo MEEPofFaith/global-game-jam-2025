@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cq3cl11qsv2ep"]
+
+[ext_resource type="Script" path="res://scripts/bubble.gd" id="1_mdj1s"]
+[ext_resource type="Texture2D" uid="uid://8gwxquq22ond" path="res://assets/bubble.png" id="2_0u31h"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7xdwx"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k4n2x"]
+radius = 7.0
+
+[node name="RigidBody2D" type="RigidBody2D"]
+position = Vector2(8, 0)
+mass = 0.001
+physics_material_override = SubResource("PhysicsMaterial_7xdwx")
+gravity_scale = 0.0
+script = ExtResource("1_mdj1s")
+DRAG = 0.75
+
+[node name="Bubble" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_0u31h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_k4n2x")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
