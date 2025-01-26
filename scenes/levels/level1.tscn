@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://d0vpyikaylgcs"]
+[gd_scene load_steps=6 format=4 uid="uid://d0vpyikaylgcs"]
 
 [ext_resource type="Texture2D" uid="uid://csyfycx5c0d2k" path="res://assets/floor.png" id="1_ihhru"]
 [ext_resource type="PackedScene" uid="uid://bgrire83e5k7b" path="res://scenes/obstacles/spike.tscn" id="2_40pum"]
+[ext_resource type="PackedScene" uid="uid://dbd70beh3ix6g" path="res://scenes/obstacles/missile_launcher.tscn" id="3_nfwdb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v8kf6"]
 texture = ExtResource("1_ihhru")
@@ -15,11 +16,10 @@ texture = ExtResource("1_ihhru")
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_s15jk"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 3
 sources/0 = SubResource("TileSetAtlasSource_v8kf6")
 
 [node name="Level1" type="Node2D"]
-light_mask = 3
 
 [node name="Layer0" type="TileMapLayer" parent="."]
 use_parent_material = true
@@ -65,3 +65,17 @@ scale = Vector2(2, 2)
 position = Vector2(64, -430)
 rotation = 1.5708
 scale = Vector2(2, 2)
+
+[node name="MissileLauncher" parent="." instance=ExtResource("3_nfwdb")]
+position = Vector2(194, -136)
+rotation = 3.14159
+
+[node name="MissileLauncher2" parent="." instance=ExtResource("3_nfwdb")]
+position = Vector2(194, -214)
+rotation = 3.14159
+shotDelay = 1.0
+
+[node name="MissileLauncher3" parent="." instance=ExtResource("3_nfwdb")]
+position = Vector2(194, -286)
+rotation = 3.14159
+shotDelay = 2.0

@@ -8,13 +8,14 @@ friction = 0.0
 bounce = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k4n2x"]
-radius = 7.0
+radius = 8.24621
 
 [node name="RigidBody2D" type="RigidBody2D"]
-position = Vector2(8, 0)
+collision_layer = 3
 mass = 0.001
 physics_material_override = SubResource("PhysicsMaterial_7xdwx")
 gravity_scale = 0.0
+lock_rotation = true
 script = ExtResource("1_mdj1s")
 DRAG = 0.75
 

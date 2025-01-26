@@ -6,7 +6,7 @@
 collision_layer = 5
 
 [node name="Spike" type="Sprite2D" parent="."]
-position = Vector2(0, -6)
+position = Vector2(0, -4)
 texture = ExtResource("1_63fsy")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

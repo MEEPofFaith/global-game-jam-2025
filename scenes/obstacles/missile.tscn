@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsk5gr3dgyn18"]
+
+[ext_resource type="Texture2D" uid="uid://cx3cyjmt05iwg" path="res://assets/obstacles/missle.png" id="1_4nvde"]
+[ext_resource type="Script" path="res://scripts/obstacles/missile.gd" id="1_typ16"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s4hbb"]
+size = Vector2(20, 5)
+
+[node name="Missile" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 3
+gravity_scale = 0.0
+script = ExtResource("1_typ16")
+
+[node name="Missle" type="Sprite2D" parent="."]
+texture = ExtResource("1_4nvde")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_s4hbb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

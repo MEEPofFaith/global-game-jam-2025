@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbd70beh3ix6g"]
+
+[ext_resource type="Script" path="res://scripts/obstacles/missile_launcher.gd" id="1_jh700"]
+[ext_resource type="Texture2D" uid="uid://dsott02xe4oqs" path="res://assets/obstacles/missile_launcher.png" id="1_sbjpg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pibhu"]
+size = Vector2(28, 15)
+
+[node name="MissileLauncher" type="StaticBody2D"]
+collision_layer = 0
+script = ExtResource("1_jh700")
+shotInterval = 3.0
+velocity = 100.0
+
+[node name="MissileLauncher" type="Sprite2D" parent="."]
+texture = ExtResource("1_sbjpg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pibhu")
