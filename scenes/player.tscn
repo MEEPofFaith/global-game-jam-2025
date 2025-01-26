@@ -66,7 +66,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_b1410")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 10.0
 }]
 
@@ -84,7 +84,8 @@ shape = SubResource("RectangleShape2D_sjx7e")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_n3poj")
-frame_progress = 0.486533
+animation = &"idle"
+autoplay = "idle"
 offset = Vector2(-1, 2)
 
 [node name="Bubble Check" type="Area2D" parent="."]

@@ -66,7 +66,7 @@ func _process(delta) -> void:
 	var mousePos = get_global_mouse_position()
 	coll.look_at(mousePos)
 	bubbleTimer -= delta
-	#if Input.is_action_pressed("shoot"): (Madness Mode) (Oh god oh fuck)
+	#if Input.is_action_pressed("shoot"): # (Madness Mode) (Oh god oh fuck)
 	if bubbleTimer <= 0 and Input.is_action_pressed("shoot") and !coll.has_overlapping_bodies():
 		bubbleTimer = BUBBLECOOLDOWN
 		var b = BUBBLE.instantiate()
