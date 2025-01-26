@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://d0vpyikaylgcs"]
+[gd_scene load_steps=13 format=4 uid="uid://d0vpyikaylgcs"]
 
 [ext_resource type="Texture2D" uid="uid://csyfycx5c0d2k" path="res://assets/floor.png" id="1_ihhru"]
 [ext_resource type="PackedScene" uid="uid://bgrire83e5k7b" path="res://scenes/obstacles/spike.tscn" id="2_40pum"]
 [ext_resource type="PackedScene" uid="uid://dbd70beh3ix6g" path="res://scenes/obstacles/missile_launcher.tscn" id="3_nfwdb"]
+[ext_resource type="PackedScene" uid="uid://dauml2pxm48g3" path="res://scenes/obstacles/platform.tscn" id="4_7tcff"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v8kf6"]
 texture = ExtResource("1_ihhru")
@@ -18,6 +19,83 @@ texture = ExtResource("1_ihhru")
 [sub_resource type="TileSet" id="TileSet_s15jk"]
 physics_layer_0/collision_layer = 3
 sources/0 = SubResource("TileSetAtlasSource_v8kf6")
+
+[sub_resource type="Animation" id="Animation_a7dlw"]
+resource_name = "move"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(283, -250), Vector2(420, -250)]
+}
+
+[sub_resource type="Animation" id="Animation_u5722"]
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(286, -115), Vector2(423, -115)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ynhp"]
+_data = {
+"RESET": SubResource("Animation_u5722"),
+"move": SubResource("Animation_a7dlw")
+}
+
+[sub_resource type="Animation" id="Animation_pc0iq"]
+resource_name = "move"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(428, -172), Vector2(285, -172)]
+}
+
+[sub_resource type="Animation" id="Animation_0raai"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(428, -172)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f6jnp"]
+_data = {
+"RESET": SubResource("Animation_0raai"),
+"move": SubResource("Animation_pc0iq")
+}
 
 [node name="Level1" type="Node2D"]
 
@@ -79,3 +157,49 @@ shotDelay = 1.0
 position = Vector2(194, -286)
 rotation = 3.14159
 shotDelay = 2.0
+
+[node name="Platform" parent="." instance=ExtResource("4_7tcff")]
+position = Vector2(286, -115)
+scale = Vector2(3, 3)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform"]
+libraries = {
+"": SubResource("AnimationLibrary_8ynhp")
+}
+autoplay = "move"
+
+[node name="Platform2" parent="." instance=ExtResource("4_7tcff")]
+position = Vector2(428, -172)
+scale = Vector2(3, 3)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform2"]
+libraries = {
+"": SubResource("AnimationLibrary_f6jnp")
+}
+autoplay = "move"
+
+[node name="Spike" parent="Platform2" instance=ExtResource("2_40pum")]
+position = Vector2(-2.5, -4)
+scale = Vector2(0.275, 0.275)
+
+[node name="Spike2" parent="Platform2" instance=ExtResource("2_40pum")]
+position = Vector2(2.5, -4)
+scale = Vector2(0.275, 0.275)
+
+[node name="Platform3" parent="." instance=ExtResource("4_7tcff")]
+position = Vector2(286, -115)
+scale = Vector2(3, 3)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform3"]
+libraries = {
+"": SubResource("AnimationLibrary_8ynhp")
+}
+autoplay = "RESET"
+
+[node name="Spike" parent="Platform3" instance=ExtResource("2_40pum")]
+position = Vector2(-2.5, -4)
+scale = Vector2(0.275, 0.275)
+
+[node name="Spike2" parent="Platform3" instance=ExtResource("2_40pum")]
+position = Vector2(2.5, -4)
+scale = Vector2(0.275, 0.275)
