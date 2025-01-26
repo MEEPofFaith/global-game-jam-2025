@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://boyg37bha8rxy"
-path="res://.godot/imported/wand.png-42dfd8a825506f590929a37a4a656fc3.ctex"
+uid="uid://dwxfhhhi6dued"
+path="res://.godot/imported/platform_2.png-8c1452e5616ba561de27eabc109cdd7a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/wand.png"
-dest_files=["res://.godot/imported/wand.png-42dfd8a825506f590929a37a4a656fc3.ctex"]
+source_file="res://assets/obstacles/platform_2.png"
+dest_files=["res://.godot/imported/platform_2.png-8c1452e5616ba561de27eabc109cdd7a.ctex"]
 
 [params]
 

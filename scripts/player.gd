@@ -3,11 +3,19 @@ extends CharacterBody2D
 
 static var INSTANCE
 
+# Player stuff
 const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 const BUBBLE_JUMP_VELOCITY = -600.0
 var lastSide
 var onBubble
+
+# Bubble launching stuff
+const FIREPOWER = 50.0
+const BUBBLECOOLDOWN = 0.5
+const BUBBLE := preload("res://scenes/bubble.tscn")
+var bubbleTimer = 0
+@export var shotDist: float
 
 func _ready() -> void:
 	var mousePos = get_global_mouse_position()
@@ -50,3 +58,18 @@ func _physics_process(delta: float) -> void:
 	if side != lastSide:
 		apply_scale(Vector2(-1, 1))
 	lastSide = side
+
+func _process(delta) -> void:
+	var coll = get_node("Bubble Check")
+	var mousePos = get_global_mouse_position()
+	coll.look_at(mousePos)
+	bubbleTimer -= delta
+	#if Input.is_action_pressed("shoot"): (Madness Mode) (Oh god oh fuck)
+	if bubbleTimer <= 0 and Input.is_action_pressed("shoot") and !coll.has_overlapping_bodies():
+		bubbleTimer = BUBBLECOOLDOWN
+		var b = BUBBLE.instantiate()
+		var ang = global_position.angle_to_point(mousePos)
+		b.position = global_position + Vector2(shotDist, 0).rotated(ang)
+		#b.linear_velocity = PLAYER.INSTANCE.get_real_velocity() + Vector2(FIREPOWER, 0).rotated(ang)
+		b.linear_velocity = Vector2(FIREPOWER, 0).rotated(ang)
+		GAME.INSTANCE.add_child(b)
