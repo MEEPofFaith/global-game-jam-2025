@@ -21,7 +21,6 @@ autoplay = true
 parameters/looping = true
 
 [node name="Level1" parent="." instance=ExtResource("3_loe3l")]
-position = Vector2(-18, -5)
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -10
