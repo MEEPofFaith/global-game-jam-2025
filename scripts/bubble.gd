@@ -10,6 +10,7 @@ var popTimer = 0.5
 func _ready() -> void:
 	set_collision_layer_value(1, false)
 	apply_scale(Vector2(0, 0))
+	GAME.INSTANCE.bubbles.append(self)
 
 func growf() -> float:
 	return 1 - (growTimer / GROWTIME)
@@ -34,4 +35,5 @@ func _physics_process(delta: float) -> void:
 	if popping:
 		popTimer -= delta
 		if popTimer < 0:
+			GAME.INSTANCE.bubbles.erase(self)
 			queue_free()

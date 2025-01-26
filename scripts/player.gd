@@ -52,6 +52,8 @@ func _physics_process(delta: float) -> void:
 			if collided is BUBBLE:
 				collided.pop()
 				if is_on_floor_only(): onBubble = true
+			elif collided is CollisionObject2D and collided.get_collision_layer_value(3):
+				GAME.INSTANCE.reset()
 	
 	var mousePos = get_global_mouse_position()
 	var side = mousePos.x > global_position.x
