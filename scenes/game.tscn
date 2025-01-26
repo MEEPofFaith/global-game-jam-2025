@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://xf8471qnh1q4"]
+[gd_scene load_steps=5 format=3 uid="uid://xf8471qnh1q4"]
 
 [ext_resource type="PackedScene" uid="uid://b0g12fclhck76" path="res://scenes/player.tscn" id="1_7m1op"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_wxoyr"]
+[ext_resource type="AudioStream" uid="uid://d00t8ixg88t83" path="res://assets/music.mp3" id="3_dh4di"]
 [ext_resource type="PackedScene" uid="uid://d0vpyikaylgcs" path="res://scenes/levels/level1.tscn" id="3_loe3l"]
 
 [node name="Game" type="Node2D"]
@@ -12,6 +13,11 @@ script = ExtResource("1_wxoyr")
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2.5, 2.5)
 position_smoothing_enabled = true
+
+[node name="Music" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("3_dh4di")
+autoplay = true
+parameters/looping = true
 
 [node name="Level1" parent="." instance=ExtResource("3_loe3l")]
 position = Vector2(-18, -5)
