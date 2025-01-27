@@ -10,7 +10,6 @@ var popTimer = 0.5
 func _ready() -> void:
 	set_collision_layer_value(1, false)
 	apply_scale(Vector2(0, 0))
-	GAME.INSTANCE.spawns.append(self)
 
 func growf() -> float:
 	return 1 - (growTimer / GROWTIME)
@@ -21,10 +20,6 @@ func grown() -> bool:
 func pop() -> void:
 	if growTimer <= 0:
 		popping = true
-		
-func oof() -> void:
-	GAME.INSTANCE.spawns.erase(self)
-	queue_free()
 
 func _physics_process(delta: float) -> void:
 	if growTimer > 0:
@@ -39,4 +34,4 @@ func _physics_process(delta: float) -> void:
 	if popping:
 		popTimer -= delta
 		if popTimer < 0:
-			oof()
+			GAME.INSTANCE.despawn(self)

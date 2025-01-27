@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://n73bxxre1axm"]
+
+[ext_resource type="Script" path="res://scenes/menu.gd" id="1_0ifp1"]
+[ext_resource type="AudioStream" uid="uid://d00t8ixg88t83" path="res://assets/music.mp3" id="2_bfsti"]
+
+[node name="App" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0ifp1")
+
+[node name="MainMenu" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.0
+offset_top = -93.0
+offset_right = 94.0
+offset_bottom = 93.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartButton" type="Button" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Start"
+
+[node name="LevelsButton" type="Button" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Levels"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_bfsti")
+autoplay = true
+
+[connection signal="pressed" from="MainMenu/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/LevelsButton" to="." method="_on_levels_button_pressed"]

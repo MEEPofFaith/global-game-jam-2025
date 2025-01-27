@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=4 uid="uid://gpb6acvopddu"]
+
+[ext_resource type="Texture2D" uid="uid://csyfycx5c0d2k" path="res://assets/floor.png" id="1_nv768"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_egm28"]
+texture = ExtResource("1_nv768")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_c65ew"]
+physics_layer_0/collision_layer = 3
+sources/0 = SubResource("TileSetAtlasSource_egm28")
+
+[node name="Level2" type="Node2D"]
+
+[node name="Layer0" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAHAAEAAAABAAEAAAAGAAEAAAABAAEAAAAFAAEAAAABAAEAAAAEAAEAAAABAAEAAAADAAEAAAABAAEAAAACAAEAAAABAAEAAAABAAEAAAABAAEAAAAAAAEAAAABAAEAAAD//wEAAAABAAEAAAD+/wEAAAABAAEAAAD9/wEAAAABAAEAAAD8/wEAAAABAAEAAAD7/wEAAAABAAEAAAD6/wEAAAABAAEAAAD5/wEAAAABAAEAAAD4/wEAAAABAAEAAAD1//j/AAABAAAAAAD2//j/AAABAAAAAAD3//j/AAABAAAAAAD3//n/AAABAAAAAAD3//r/AAABAAAAAAD3//v/AAABAAAAAAD3//z/AAABAAAAAAD3//3/AAABAAAAAAD4//j/AAABAAAAAAD5//j/AAABAAAAAAD6//j/AAABAAAAAAD7//v/AAABAAAAAAD7//z/AAABAAAAAAD8//n/AAABAAAAAAD8//r/AAABAAAAAAD8//v/AAABAAAAAAD8//3/AAABAAAAAAD9//n/AAABAAAAAAD9//v/AAABAAAAAAD9//3/AAABAAAAAAD+//n/AAABAAAAAAD+//v/AAABAAAAAAD+//3/AAABAAAAAAD///n/AAABAAAAAAD///r/AAABAAAAAAD///v/AAABAAAAAAABAPn/AAABAAAAAAABAPz/AAABAAAAAAACAPj/AAABAAAAAAACAPr/AAABAAAAAAACAP3/AAABAAAAAAADAPj/AAABAAAAAAADAPv/AAABAAAAAAADAP3/AAABAAAAAAAEAPn/AAABAAAAAAAEAPz/AAABAAAAAAAGAPr/AAABAAAAAAAHAPr/AAABAAAAAAAIAPf/AAABAAAAAAAIAPj/AAABAAAAAAAIAPn/AAABAAAAAAAIAPr/AAABAAAAAAAIAPv/AAABAAAAAAAIAPz/AAABAAAAAAAIAP3/AAABAAAAAAAJAPr/AAABAAAAAAAKAPr/AAABAAAAAAA=")
+tile_set = SubResource("TileSet_c65ew")

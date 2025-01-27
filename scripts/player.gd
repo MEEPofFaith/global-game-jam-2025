@@ -7,8 +7,8 @@ static var INSTANCE
 const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 const BUBBLE_JUMP_VELOCITY = -600.0
-var lastSide
 var onBubble
+@onready var animated_sprite = $AnimatedSprite2D
 
 # Bubble launching stuff
 const FIREPOWER = 50.0
@@ -19,9 +19,6 @@ var bubbleTimer = 0
 
 func _ready() -> void:
 	var mousePos = get_global_mouse_position()
-	var side = mousePos.x > global_position.x
-	if !side: apply_scale(Vector2(-1, 1))
-	lastSide = side
 	INSTANCE = self
 	
 
@@ -44,6 +41,15 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	
+	if direction == 0:
+		animated_sprite.play("idle")
+	
+		var mousePos = get_global_mouse_position()
+		animated_sprite.flip_h = mousePos.x < global_position.x
+	else:
+		animated_sprite.play("run")
+		animated_sprite.flip_h = direction < 0
 
 	onBubble = false
 	if move_and_slide():
@@ -54,12 +60,6 @@ func _physics_process(delta: float) -> void:
 				if is_on_floor_only(): onBubble = true
 			elif collided is CollisionObject2D and collided.get_collision_layer_value(3):
 				GAME.INSTANCE.reset()
-	
-	var mousePos = get_global_mouse_position()
-	var side = mousePos.x > global_position.x
-	if side != lastSide:
-		apply_scale(Vector2(-1, 1))
-	lastSide = side
 
 func _process(delta) -> void:
 	var coll = get_node("Bubble Check")
@@ -74,4 +74,4 @@ func _process(delta) -> void:
 		b.position = global_position + Vector2(shotDist, 0).rotated(ang)
 		b.linear_velocity = PLAYER.INSTANCE.get_real_velocity() + Vector2(FIREPOWER, 0).rotated(ang)
 		#b.linear_velocity = Vector2(FIREPOWER, 0).rotated(ang)
-		GAME.INSTANCE.add_child(b)
+		GAME.INSTANCE.spawn(b)

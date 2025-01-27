@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b0g12fclhck76"]
+[gd_scene load_steps=18 format=3 uid="uid://b0g12fclhck76"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_i1uv3"]
 [ext_resource type="Texture2D" uid="uid://dwu2mbdv3kogs" path="res://assets/player.png" id="1_new25"]
@@ -38,6 +38,22 @@ region = Rect2(192, 0, 32, 32)
 atlas = ExtResource("1_new25")
 region = Rect2(224, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xw2r"]
+atlas = ExtResource("1_new25")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7po1d"]
+atlas = ExtResource("1_new25")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvj62"]
+atlas = ExtResource("1_new25")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ho6k"]
+atlas = ExtResource("1_new25")
+region = Rect2(96, 32, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_n3poj"]
 animations = [{
 "frames": [{
@@ -68,6 +84,23 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xw2r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7po1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvj62")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ho6k")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xr0ac"]
@@ -84,8 +117,9 @@ shape = SubResource("RectangleShape2D_sjx7e")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_n3poj")
-animation = &"idle"
+animation = &"run"
 autoplay = "idle"
+frame_progress = 0.763875
 offset = Vector2(-1, 2)
 
 [node name="Bubble Check" type="Area2D" parent="."]

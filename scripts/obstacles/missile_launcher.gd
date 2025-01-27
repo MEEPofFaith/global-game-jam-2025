@@ -20,4 +20,4 @@ func _process(delta: float) -> void:
 		m.rotation = rotation
 		m.linear_velocity = Vector2(velocity, 0).rotated(rotation)
 		m.scale = scale
-		GAME.INSTANCE.add_child(m)
+		GAME.INSTANCE.spawn(m)
