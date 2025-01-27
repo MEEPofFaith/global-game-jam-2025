@@ -66,3 +66,6 @@ func _on_level_2_pressed() -> void:
 
 func _on_level_3_pressed() -> void:
 	start_level(2)
+
+func _on_level_4_pressed() -> void:
+	start_level(3)

@@ -5,7 +5,8 @@ static var INSTANCE
 var levels := [
 	preload("res://scenes/levels/level1.tscn"),
 	preload("res://scenes/levels/level2.tscn"),
-	preload("res://scenes/levels/level3.tscn")
+	preload("res://scenes/levels/level3.tscn"),
+	preload("res://scenes/levels/level4.tscn")
 ]
 var currentLevel
 var currentLevelIndex = 0

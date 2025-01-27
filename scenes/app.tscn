@@ -109,6 +109,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Level 3"
 
+[node name="Level4" type="Button" parent="MainMenu/LevelSelect/LevelSelect"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Level 4"
+
 [node name="Back" type="Button" parent="MainMenu/LevelSelect"]
 layout_mode = 1
 anchors_preset = 3
@@ -225,6 +230,7 @@ parameters/looping = true
 [connection signal="pressed" from="MainMenu/LevelSelect/LevelSelect/Level1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="MainMenu/LevelSelect/LevelSelect/Level2" to="." method="_on_level_2_pressed"]
 [connection signal="pressed" from="MainMenu/LevelSelect/LevelSelect/Level3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="MainMenu/LevelSelect/LevelSelect/Level4" to="." method="_on_level_4_pressed"]
 [connection signal="pressed" from="MainMenu/LevelSelect/Back" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="MainMenu/WinScreen/Back" to="." method="_on_win_back_pressed"]
 [connection signal="pressed" from="MainMenu/Intro/Continue" to="." method="_on_continue_pressed"]

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxnmuyqf517na"]
+
+[ext_resource type="Texture2D" uid="uid://b7l1xtw1800vp" path="res://assets/sprites/obstacles/laser_base.png" id="1_cy0rt"]
+[ext_resource type="Script" path="res://scripts/obstacles/laser.gd" id="1_ybkcn"]
+[ext_resource type="Texture2D" uid="uid://bymxf7wtniayk" path="res://assets/sprites/obstacles/laser.png" id="2_uf8ps"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cq17a"]
+size = Vector2(1, 13)
+
+[node name="Laser" type="StaticBody2D"]
+collision_layer = 5
+script = ExtResource("1_ybkcn")
+
+[node name="LaserBase" type="Sprite2D" parent="."]
+z_index = 1
+texture = ExtResource("1_cy0rt")
+offset = Vector2(6, 0)
+
+[node name="Beam" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_cq17a")
+
+[node name="Laser" type="Sprite2D" parent="Beam"]
+position = Vector2(-0.5, 0)
+scale = Vector2(0.999999, 1)
+texture = ExtResource("2_uf8ps")
+offset = Vector2(0.500001, 0)

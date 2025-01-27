@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4w3rj"]
 size = Vector2(18, 23)
 
-[node name="Flag" type="Area2D"]
+[node name="WinFlag" type="Area2D"]
 script = ExtResource("1_ues4b")
 
 [node name="Flag" type="Sprite2D" parent="."]
