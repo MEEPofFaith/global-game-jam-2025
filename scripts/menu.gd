@@ -5,8 +5,8 @@ static var INSTANCE
 
 @onready var MainMenu = $MainMenu
 @onready var MainButtons = $MainMenu/MainButtons
-@onready var StartButton = $MainMenu/MainButtons/StartButton
-@onready var LevelsButton = $MainMenu/MainButtons/LevelsButton
+@onready var StartButton = $MainMenu/MainButtons/Layout/StartButton
+@onready var LevelsButton = $MainMenu/MainButtons/Layout/LevelsButton
 @onready var LevelSelect = $MainMenu/LevelSelect
 @onready var WinScreen = $MainMenu/WinScreen
 @onready var Music = $Music

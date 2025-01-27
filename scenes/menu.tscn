@@ -20,7 +20,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MainButtons" type="VBoxContainer" parent="MainMenu"]
+[node name="MainButtons" type="Control" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Layout" type="VBoxContainer" parent="MainMenu/MainButtons"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -28,21 +36,38 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -94.0
-offset_top = -93.0
+offset_top = 3.0
 offset_right = 94.0
-offset_bottom = 93.0
+offset_bottom = 189.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="StartButton" type="Button" parent="MainMenu/MainButtons"]
+[node name="StartButton" type="Button" parent="MainMenu/MainButtons/Layout"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "Start"
 
-[node name="LevelsButton" type="Button" parent="MainMenu/MainButtons"]
+[node name="LevelsButton" type="Button" parent="MainMenu/MainButtons/Layout"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "Levels"
+
+[node name="Label" type="Label" parent="MainMenu/MainButtons"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -514.0
+offset_top = -205.0
+offset_right = 514.0
+offset_bottom = -57.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 108
+text = "Magical Bubble Run"
 
 [node name="LevelSelect" type="Control" parent="MainMenu"]
 visible = false
@@ -147,8 +172,8 @@ text = "Back"
 stream = ExtResource("2_bfsti")
 parameters/looping = true
 
-[connection signal="pressed" from="MainMenu/MainButtons/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="MainMenu/MainButtons/LevelsButton" to="." method="_on_levels_button_pressed"]
+[connection signal="pressed" from="MainMenu/MainButtons/Layout/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MainMenu/MainButtons/Layout/LevelsButton" to="." method="_on_levels_button_pressed"]
 [connection signal="pressed" from="MainMenu/LevelSelect/LevelSelect/Level1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="MainMenu/LevelSelect/LevelSelect/Level2" to="." method="_on_level_2_pressed"]
 [connection signal="pressed" from="MainMenu/LevelSelect/LevelSelect/Level3" to="." method="_on_level_3_pressed"]
