@@ -58,7 +58,7 @@ func _physics_process(delta: float) -> void:
 				if is_on_floor_only(): onBubble = true
 			elif collided is CollisionObject2D and collided.get_collision_layer_value(3):
 				GAME.INSTANCE.reset()
-				GAME.INSTANCE.play_death_sound()
+				SOUNDS.INSTANCE.pop.play()
 
 func _process(delta) -> void:
 	var coll = get_node("Bubble Check")

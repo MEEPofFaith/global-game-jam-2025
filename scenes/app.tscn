@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://n73bxxre1axm"]
+[gd_scene load_steps=4 format=3 uid="uid://n73bxxre1axm"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_a1042"]
 [ext_resource type="AudioStream" uid="uid://d00t8ixg88t83" path="res://assets/sounds/music.mp3" id="2_rgbq7"]
+[ext_resource type="PackedScene" uid="uid://ehskbvrbf5ue" path="res://scenes/sounds.tscn" id="3_3l58i"]
 
 [node name="App" type="Control"]
 layout_mode = 3
@@ -214,7 +215,10 @@ text = "Continue"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_rgbq7")
+volume_db = -10.0
 parameters/looping = true
+
+[node name="Sounds" parent="." instance=ExtResource("3_3l58i")]
 
 [connection signal="pressed" from="MainMenu/MainButtons/Layout/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MainMenu/MainButtons/Layout/LevelsButton" to="." method="_on_levels_button_pressed"]

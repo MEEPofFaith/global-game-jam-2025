@@ -35,3 +35,4 @@ func _physics_process(delta: float) -> void:
 		popTimer -= delta
 		if popTimer < 0:
 			GAME.INSTANCE.despawn(self)
+			SOUNDS.INSTANCE.pop.play()
