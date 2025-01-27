@@ -198,7 +198,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
-text = "The story starts off with Mr. Oswald threating to rule the world. One witch named Lydia with bubble magic has taken up the challenge to climb his tower and stop him taking over the world"
+text = "The story starts off with Mr. Oswald threating to rule the world. One witch named Lydia with bubble magic has taken up the challenge to climb his tower and stop him from taking over the world!"
 horizontal_alignment = 1
 autowrap_mode = 2
 
