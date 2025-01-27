@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://b0g12fclhck76"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_i1uv3"]
-[ext_resource type="Texture2D" uid="uid://dwu2mbdv3kogs" path="res://assets/player.png" id="1_new25"]
+[ext_resource type="Texture2D" uid="uid://dwu2mbdv3kogs" path="res://assets/sprites/player.png" id="1_new25"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sjx7e"]
 size = Vector2(16, 22)
@@ -119,7 +119,7 @@ position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_n3poj")
 animation = &"run"
 autoplay = "idle"
-frame_progress = 0.733532
+frame_progress = 0.904497
 offset = Vector2(-1, 2)
 
 [node name="Bubble Check" type="Area2D" parent="."]

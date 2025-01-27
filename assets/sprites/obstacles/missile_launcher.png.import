@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8gwxquq22ond"
-path="res://.godot/imported/bubble.png-dd17930a71c5ad345ddb3eb8ec316790.ctex"
+uid="uid://dsott02xe4oqs"
+path="res://.godot/imported/missile_launcher.png-ca25c5ea5d3c25b0558608f26a691329.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bubble.png"
-dest_files=["res://.godot/imported/bubble.png-dd17930a71c5ad345ddb3eb8ec316790.ctex"]
+source_file="res://assets/sprites/obstacles/missile_launcher.png"
+dest_files=["res://.godot/imported/missile_launcher.png-ca25c5ea5d3c25b0558608f26a691329.ctex"]
 
 [params]
 

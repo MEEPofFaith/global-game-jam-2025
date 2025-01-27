@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://dasr026572r5b"]
+[gd_scene load_steps=12 format=4 uid="uid://dasr026572r5b"]
 
-[ext_resource type="Texture2D" uid="uid://csyfycx5c0d2k" path="res://assets/floor.png" id="1_b58aw"]
+[ext_resource type="Texture2D" uid="uid://csyfycx5c0d2k" path="res://assets/sprites/floor.png" id="1_b58aw"]
 [ext_resource type="PackedScene" uid="uid://dauml2pxm48g3" path="res://scenes/obstacles/platform.tscn" id="2_3oov6"]
 [ext_resource type="PackedScene" uid="uid://dbd70beh3ix6g" path="res://scenes/obstacles/missile_launcher.tscn" id="3_igq06"]
-[ext_resource type="Texture2D" uid="uid://dne68bjsmw8q2" path="res://assets/background.png" id="4_3w06c"]
+[ext_resource type="Texture2D" uid="uid://dne68bjsmw8q2" path="res://assets/sprites/background.png" id="4_b7xyk"]
 [ext_resource type="PackedScene" uid="uid://d4avtybrpmxfv" path="res://scenes/win_flag.tscn" id="5_qv8km"]
+[ext_resource type="Script" path="res://scripts/win_flag.gd" id="6_u2d78"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tjqdq"]
 texture = ExtResource("1_b58aw")
@@ -21,6 +22,21 @@ texture = ExtResource("1_b58aw")
 physics_layer_0/collision_layer = 3
 sources/0 = SubResource("TileSetAtlasSource_tjqdq")
 
+[sub_resource type="Animation" id="Animation_8gdsq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-81, 124)]
+}
+
 [sub_resource type="Animation" id="Animation_huf08"]
 resource_name = "move"
 length = 2.0
@@ -36,21 +52,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(17, 124), Vector2(-81, 124)]
-}
-
-[sub_resource type="Animation" id="Animation_8gdsq"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-81, 124)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_axr2c"]
@@ -181,7 +182,8 @@ is not messing around."
 z_index = -10
 position = Vector2(224, 148)
 scale = Vector2(3, 3)
-texture = ExtResource("4_3w06c")
+texture = ExtResource("4_b7xyk")
 
-[node name="Flag" parent="." instance=ExtResource("5_qv8km")]
+[node name="Flag" type="Area2D" parent="." instance=ExtResource("5_qv8km")]
 position = Vector2(449, 352)
+script = ExtResource("6_u2d78")

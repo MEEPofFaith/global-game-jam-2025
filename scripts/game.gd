@@ -33,6 +33,9 @@ func reset() -> void:
 	)
 	spawns.clear()
 
+func play_death_sound() -> void:
+	$Death.play()
+
 func start_level(toStart) -> void:
 	if currentLevel != null: currentLevel.queue_free()
 	currentLevel = levels[toStart].instantiate()

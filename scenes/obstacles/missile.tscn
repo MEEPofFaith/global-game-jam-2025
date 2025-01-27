@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bsk5gr3dgyn18"]
 
-[ext_resource type="Texture2D" uid="uid://cx3cyjmt05iwg" path="res://assets/obstacles/missle.png" id="1_4nvde"]
+[ext_resource type="Texture2D" uid="uid://cx3cyjmt05iwg" path="res://assets/sprites/obstacles/missle.png" id="1_4nvde"]
 [ext_resource type="Script" path="res://scripts/obstacles/missile.gd" id="1_typ16"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4hbb"]

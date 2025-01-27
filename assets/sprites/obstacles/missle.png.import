@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bp2iayha4ug6n"
-path="res://.godot/imported/platform.png-2814e55efba316ed5bf039a99ddbc9b5.ctex"
+uid="uid://cx3cyjmt05iwg"
+path="res://.godot/imported/missle.png-6eb8d08c18269b4db00b0e92e907ccc6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/platform.png"
-dest_files=["res://.godot/imported/platform.png-2814e55efba316ed5bf039a99ddbc9b5.ctex"]
+source_file="res://assets/sprites/obstacles/missle.png"
+dest_files=["res://.godot/imported/missle.png-6eb8d08c18269b4db00b0e92e907ccc6.ctex"]
 
 [params]
 

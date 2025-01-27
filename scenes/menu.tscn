@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://n73bxxre1axm"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_0ifp1"]
-[ext_resource type="AudioStream" uid="uid://d00t8ixg88t83" path="res://assets/music.mp3" id="2_bfsti"]
+[ext_resource type="AudioStream" uid="uid://d00t8ixg88t83" path="res://assets/sounds/music.mp3" id="2_bfsti"]
 
 [node name="App" type="Control"]
 layout_mode = 3

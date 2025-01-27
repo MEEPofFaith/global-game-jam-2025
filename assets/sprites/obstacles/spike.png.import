@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgxr6ygd4f26r"
-path="res://.godot/imported/flame.png-ba1bd0775abb80fafbf52d3a8eafba27.ctex"
+uid="uid://cjmyrt4s27jc5"
+path="res://.godot/imported/spike.png-4aa40be7f83fa7ba238f0a991928346f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/obstacles/flame.png"
-dest_files=["res://.godot/imported/flame.png-ba1bd0775abb80fafbf52d3a8eafba27.ctex"]
+source_file="res://assets/sprites/obstacles/spike.png"
+dest_files=["res://.godot/imported/spike.png-4aa40be7f83fa7ba238f0a991928346f.ctex"]
 
 [params]
 
