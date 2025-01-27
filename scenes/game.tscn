@@ -10,6 +10,7 @@ script = ExtResource("1_wxoyr")
 [node name="Game" type="Node2D" parent="."]
 
 [node name="Player" parent="Game" instance=ExtResource("1_7m1op")]
+z_index = 3
 
 [node name="Camera2D" type="Camera2D" parent="Game/Player"]
 zoom = Vector2(2.5, 2.5)

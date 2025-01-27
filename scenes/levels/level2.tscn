@@ -1,10 +1,9 @@
-[gd_scene load_steps=15 format=4 uid="uid://gpb6acvopddu"]
+[gd_scene load_steps=14 format=4 uid="uid://gpb6acvopddu"]
 
 [ext_resource type="Texture2D" uid="uid://csyfycx5c0d2k" path="res://assets/sprites/floor.png" id="1_nv768"]
 [ext_resource type="PackedScene" uid="uid://dauml2pxm48g3" path="res://scenes/obstacles/platform.tscn" id="2_ylaja"]
 [ext_resource type="PackedScene" uid="uid://bgrire83e5k7b" path="res://scenes/obstacles/spike.tscn" id="3_an8sh"]
 [ext_resource type="PackedScene" uid="uid://r5cwnps00hlu" path="res://scenes/flag.tscn" id="4_f52a2"]
-[ext_resource type="Script" path="res://scripts/flag.gd" id="5_ego30"]
 [ext_resource type="Texture2D" uid="uid://dne68bjsmw8q2" path="res://assets/sprites/background.png" id="5_w7y1r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ci7bt"]
@@ -368,12 +367,25 @@ scale = Vector2(0.35, 0.35)
 position = Vector2(-2.33333, -4)
 scale = Vector2(0.35, 0.35)
 
-[node name="Flag" type="Area2D" parent="Obstacles" instance=ExtResource("4_f52a2")]
+[node name="Flag" parent="Obstacles" instance=ExtResource("4_f52a2")]
 position = Vector2(226, 16)
-script = ExtResource("5_ego30")
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -10
 position = Vector2(224, -168)
 scale = Vector2(3, 3)
 texture = ExtResource("5_w7y1r")
+
+[node name="Text" type="Node2D" parent="."]
+scale = Vector2(0.2, 0.2)
+
+[node name="Label" type="Label" parent="Text"]
+offset_left = -285.0
+offset_top = -375.0
+offset_right = 282.0
+offset_bottom = -311.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 46
+text = "Beware for your cranium."
+horizontal_alignment = 1
+vertical_alignment = 1

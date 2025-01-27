@@ -8,6 +8,7 @@ static var INSTANCE
 @onready var StartButton = $MainMenu/MainButtons/Layout/StartButton
 @onready var LevelsButton = $MainMenu/MainButtons/Layout/LevelsButton
 @onready var LevelSelect = $MainMenu/LevelSelect
+@onready var Intro = $MainMenu/Intro
 @onready var WinScreen = $MainMenu/WinScreen
 @onready var Music = $Music
 var game = preload("res://scenes/game.tscn")
@@ -16,6 +17,11 @@ func _ready() -> void:
 	INSTANCE = self
 
 func _on_start_button_pressed() -> void:
+	MainButtons.visible = false
+	Intro.visible = true
+
+func _on_continue_pressed() -> void:
+	Intro.visible = false
 	start_level(0)
 
 func _on_levels_button_pressed() -> void:
