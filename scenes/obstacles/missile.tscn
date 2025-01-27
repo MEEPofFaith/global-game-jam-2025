@@ -11,7 +11,6 @@ collision_layer = 4
 collision_mask = 3
 mass = 1000.0
 gravity_scale = 0.0
-inertia = 1000.0
 script = ExtResource("1_typ16")
 
 [node name="Missle" type="Sprite2D" parent="."]

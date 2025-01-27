@@ -4,7 +4,8 @@ extends Node2D
 static var INSTANCE
 var levels := [
 	preload("res://scenes/levels/level1.tscn"),
-	preload("res://scenes/levels/level2.tscn")
+	preload("res://scenes/levels/level2.tscn"),
+	preload("res://scenes/levels/level3.tscn")
 ]
 var currentLevel
 var currentLevelIndex = 0
@@ -24,6 +25,7 @@ func despawn(object) -> void:
 
 func reset() -> void:
 	PLAYER.INSTANCE.position = Vector2(0, 0)
+	PLAYER.INSTANCE.velocity = Vector2(0, 0)
 	spawns.all(
 		func(object):
 			object.queue_free()
@@ -38,7 +40,7 @@ func start_level(toStart) -> void:
 	$Game.add_child(currentLevel)
 	currentLevelIndex = toStart
 	spawns.clear()
-	PLAYER.INSTANCE.position = Vector2(0, 0)
+	reset()
 
 func next_level() -> void:
 	start_level(currentLevelIndex + 1)

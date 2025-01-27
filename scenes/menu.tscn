@@ -78,7 +78,12 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Level 2"
 
-[node name="Button" type="Button" parent="MainMenu/LevelSelect"]
+[node name="Level3" type="Button" parent="MainMenu/LevelSelect/LevelSelect"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Level 3"
+
+[node name="Back" type="Button" parent="MainMenu/LevelSelect"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -96,10 +101,11 @@ text = "Back"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_bfsti")
-autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="MainMenu/MainButtons/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MainMenu/MainButtons/LevelsButton" to="." method="_on_levels_button_pressed"]
 [connection signal="pressed" from="MainMenu/LevelSelect/LevelSelect/Level1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="MainMenu/LevelSelect/LevelSelect/Level2" to="." method="_on_level_2_pressed"]
-[connection signal="pressed" from="MainMenu/LevelSelect/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MainMenu/LevelSelect/LevelSelect/Level3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="MainMenu/LevelSelect/Back" to="." method="_on_back_button_pressed"]
