@@ -7,5 +7,6 @@ func _ready() -> void:
 func _on_body_entered(body: Node) -> void:
 	if body is BUBBLE:
 		GAME.INSTANCE.despawn(body)
+		SOUNDS.INSTANCE.pop.play()
 	else:
 		GAME.INSTANCE.despawn(self)
