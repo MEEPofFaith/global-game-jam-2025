@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=4 uid="uid://dasr026572r5b"]
+[gd_scene load_steps=11 format=4 uid="uid://dasr026572r5b"]
 
 [ext_resource type="Texture2D" uid="uid://csyfycx5c0d2k" path="res://assets/floor.png" id="1_b58aw"]
 [ext_resource type="PackedScene" uid="uid://dauml2pxm48g3" path="res://scenes/obstacles/platform.tscn" id="2_3oov6"]
 [ext_resource type="PackedScene" uid="uid://dbd70beh3ix6g" path="res://scenes/obstacles/missile_launcher.tscn" id="3_igq06"]
 [ext_resource type="Texture2D" uid="uid://dne68bjsmw8q2" path="res://assets/background.png" id="4_3w06c"]
+[ext_resource type="PackedScene" uid="uid://d4avtybrpmxfv" path="res://scenes/win_flag.tscn" id="5_qv8km"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tjqdq"]
 texture = ExtResource("1_b58aw")
@@ -181,3 +182,6 @@ z_index = -10
 position = Vector2(224, 148)
 scale = Vector2(3, 3)
 texture = ExtResource("4_3w06c")
+
+[node name="Flag" parent="." instance=ExtResource("5_qv8km")]
+position = Vector2(449, 352)

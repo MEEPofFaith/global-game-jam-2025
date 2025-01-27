@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4avtybrpmxfv"]
+
+[ext_resource type="Script" path="res://scripts/win_flag.gd" id="1_ues4b"]
+[ext_resource type="Texture2D" uid="uid://j3l3jepj0r4h" path="res://assets/flag.png" id="2_35b2p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4w3rj"]
+size = Vector2(18, 23)
+
+[node name="Flag" type="Area2D"]
+script = ExtResource("1_ues4b")
+
+[node name="Flag" type="Sprite2D" parent="."]
+position = Vector2(4.5, -11.5)
+texture = ExtResource("2_35b2p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4.5, -11.5)
+shape = SubResource("RectangleShape2D_4w3rj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
